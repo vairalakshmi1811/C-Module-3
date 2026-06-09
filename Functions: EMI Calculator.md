@@ -23,9 +23,34 @@ To write a C program that calculates the EMI for a loan using a function **witho
 6. Stop the program.
 
 ## 🧾Program
-Add Code Here
+```
+#include <stdio.h>
+#include <math.h>
+void calculateEMI(float p, float r, int t) {
+    float emi;
+    r = r / (12 * 100);
+    emi = (p * r * pow(1 + r, t)) / (pow(1 + r, t) - 1);
+    printf("EMI = %.2f\n", emi);
+}
 
+int main() {
+    float p, r;
+    int t;
+    printf("Enter principal amount: ");
+    scanf("%f", &p);
+
+    printf("Enter annual interest rate (in %%): ");
+    scanf("%f", &r);
+
+    printf("Enter loan duration (in months): ");
+    scanf("%d", &t);
+    calculateEMI(p, r, t);
+
+    return 0;
+}
+```
 ## Sample Output
+<img width="905" height="339" alt="image" src="https://github.com/user-attachments/assets/a33b61ba-3611-4250-829e-301138035786" />
 
 ## Result
-
+C program that calculates the EMI for a loan using a function **without return type and with arguments** is written.
